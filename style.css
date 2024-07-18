@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://www.maketecheasier.com/assets/uploads/2021/11/Featured-Image-Live-Weather-Wallpapers-Android-800x400.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    animation: backgroundAnimation 60s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease forwards;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.theme-buttons {
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease forwards;
+}
+
+.theme-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-buttons button:hover {
+    background-color: #050542;
+    color: #fff;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: slideInRight 1s ease forwards;
+}
+
+#city {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #4a4a4a;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #050542;
+}
+
+.weather-container, .forecast-container {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0.9; /* Increased opacity */
+}
+
+.hidden {
+    display: none;
+}
+
+.weather-info {
+    margin-top: 10px;
+}
+
+.forecast-item {
+    display: inline-block;
+    width: calc(20% - 20px); /* Adjusted width to fit 5 items per row */
+    margin: 1%;
+    padding: 10px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #ccc; /* Added border */
+}
+
+.forecast-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.forecast-item p {
+    margin: 5px 0;
+}
+
+/* Dark Theme */
+body.dark-mode {
+    background-color: #000000;
+    color: #fff;
+}
+
+.container.dark-mode {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.theme-buttons button.dark-mode {
+    background-color: #6c757d;
+}
+
+button.dark-mode {
+    background: #007bff;
+}
+
+.weather-container.dark-mode, .forecast-container.dark-mode, .forecast-item.dark-mode {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.weather-info.dark-mode {
+    color: #ffffff;
+}
+
+.forecast-item.dark-mode {
+    background: #495057;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    border-color: #6c757d; /* Adjusted border color */
+}
+
+.forecast-item.dark-mode h3 {
+    color: #fff;
+}
+
+.forecast-item.dark-mode p {
+    color: #ccc;
+}
+
+/* 3D Effects */
+.container, .weather-container, .forecast-container, .forecast-item {
+    transition: transform 0.3s ease;
+}
+
+.container:hover, .weather-container:hover, .forecast-container:hover, .forecast-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Weather App Heading */
+.weather-app-heading {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .weather-app-heading {
+    color: #ffffff;
+}
